@@ -40,7 +40,7 @@ $query = mysqli_query($con, "SELECT * FROM class WHERE level= '$beginner'") or d
 $lectures = mysqli_num_rows($query);
 
 if ($lectures == 0) {
-    echo "<h1 class='text-center mt-5'>You have no Class! Create one <a href='create_class.php'>Here</a></h1>";
+    echo "<h1 class='text-center mt-5'>There is no class in this category</h1>";
 } else {
     while ($row = mysqli_fetch_array($query)) {
 
@@ -99,7 +99,7 @@ if ($lectures == 0) {
     $lectures1 = mysqli_num_rows($query1);
 
     if ($lectures1 == 0) {
-        echo "<h1 class='text-center mt-5'>You have no Class! Create one <a href='create_class.php'>Here</a></h1>";
+         echo "<h1 class='text-center mt-5'>There is no class in this category</h1>";
     } else {
         while ($row1 = mysqli_fetch_array($query1)) {
 
@@ -162,7 +162,7 @@ if ($lectures == 0) {
     $lectures2 = mysqli_num_rows($query2);
 
     if ($lectures2 == 0) {
-        echo "<h1 class='text-center mt-5'>You have no Class! Create one <a href='create_class.php'>Here</a></h1>";
+         echo "<h1 class='text-center mt-5'>There is no class in this category</h1>";
     } else {
         while ($row2 = mysqli_fetch_array($query2)) {
 
