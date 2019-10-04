@@ -46,7 +46,7 @@ include 'includes/student_sidebar.php';
                 $run_cat = mysqli_query($con, $get_cat);
                 $count_cat = mysqli_num_rows($run_cat);
                 if($count_cat == 0) {
-                    echo "<h1 class='text-center mt-5'>No Course in that Category <a href='create_class.php'>Here</a></h1>";
+                    echo "<h1 class='text-center mt-5'>No Course in this Track</h1>";
                 } 
                 while($row = mysqli_fetch_assoc($run_cat)){
                       $class_id = $row['class_id'];
@@ -134,7 +134,7 @@ include 'includes/student_sidebar.php';
                 $run_cat1 = mysqli_query($con, $get_cat1);
                 $count_cat1 = mysqli_num_rows($run_cat1);
                 if($count_cat1 == 0) {
-                    echo "<h1 class='text-center mt-5'>No Course in that Category <a href='create_class.php'>Here</a></h1>";
+                    echo "<h1 class='text-center mt-5'>No Course in this track</h1>";
                 } 
                 while($row1 = mysqli_fetch_assoc($run_cat1)){
                       $class_id1 = $row1['class_id'];
@@ -220,7 +220,7 @@ include 'includes/student_sidebar.php';
                 $run_cat2 = mysqli_query($con, $get_cat2);
                 $count_cat2 = mysqli_num_rows($run_cat2);
                 if($count_cat2 == 0) {
-                    echo "<h1 class='text-center mt-5'>No Course in that Category <a href='create_class.php'>Here</a></h1>";
+                    echo "<h1 class='text-center mt-5'>No Course in this track</h1>";
                 } 
                 while($row2 = mysqli_fetch_assoc($run_cat2)){
                       $class_id2 = $row2['class_id'];
@@ -307,7 +307,7 @@ include 'includes/student_sidebar.php';
                 $run_cat3 = mysqli_query($con, $get_cat3);
                 $count_cat3 = mysqli_num_rows($run_cat3);
                 if($count_cat3 == 0) {
-                    echo "<h1 class='text-center mt-5'>No Course in that Category <a href='create_class.php'>Here</a></h1>";
+                    echo "<h1 class='text-center mt-5'>No Course in this track</h1>";
                 } 
                 while($row3 = mysqli_fetch_assoc($run_cat3)){
                       $class_id3 = $row3['class_id'];
@@ -398,7 +398,7 @@ include 'includes/student_sidebar.php';
                             $lectures = mysqli_num_rows($query);
                             
                             if ($lectures == 0) {
-                                echo "<h1 class='text-center mt-5'>You have no Class! Create one <a href='create_class.php'>Here</a></h1>";
+                                echo "<h1 class='text-center mt-5'>You have no Class!</h1>";
                             } else {
                                 while ($row4 = mysqli_fetch_array($query)) { 
                             
