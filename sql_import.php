@@ -6,32 +6,31 @@ $user = 'i2nur0ym9o5hc94i';
 $password = 'rzthcnliqigjkpdb';
 $dbname = 'usqod01dmfdpbgq0';
 
+
+// TEST 
+
+//connection variables
+// $host = 'localhost';
+// $user = 'root';
+// $password = '';
+// $dbname = 'mini_class';
+
+
 //create mysql connection
-$mysqli = new mysqli($host,$user,$password,$dbname);
-if ($mysqli->connect_error) {
-    printf("Connection failed: %s\n", $mysqli->connect_error);
+$conn = new mysqli($host,$user,$password,$dbname);
+if ($conn->connect_error) {
+    printf("Connection failed: %s\n", $conn->connect_error);
     die();
 }
 
-//create the database
-if ( !$mysqli->query('CREATE DATABASE accounts') ) {
-    printf("Errormessage: %s\n", $mysqli->error);
-}
+$new_column = $conn->query('ALTER TABLE class ADD category VARCHAR(50) NOT NULL');
 
-//create users table with all the fields
-$mysqli->query('
-CREATE TABLE `mini_class`.`class` 
-(
-`class_id` int(255) NOT NULL,
-  `teacher_id` int(255) NOT NULL,
-  `title` varchar(150) NOT NULL,
-  `level` varchar(100) NOT NULL,
-  `description` text NOT NULL,
-  `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `completed` int(5) NOT NULL DEFAULT '0',
-  `class_thumbnail` varchar(200) NOT NULL,
-  `category` varchar(255) NOT NULL  
-);') or die($mysqli->error);
+//RUN QUERY
+if ($new_column !== FALSE ) {
+    printf("The column has been added");
+} else {
+  printf("The column has not been added: %s\n", $new_column->error);
+}
 
 ?>
 
